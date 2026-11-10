@@ -666,13 +666,11 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-today" aria-label="Scene 2 of 10: Where we are now">
+    <section class="scene" id="s-today" aria-label="Scene 2 of 11: Today">
       <div class="wrap split">
         <div class="copy">
-                    <div class="tswap">
-            <h2 class="fx" id="td-ha">Today: an agent in each product.</h2>
-            <h2 class="fx" id="td-hb">Tomorrow: one entry point, one output point, one conversation.</h2>
-          </div>
+          <h2 class="fx" id="td-ha">Today: an agent in each product.</h2>
+          <p class="fx" id="td-ca">Separate product conversations.</p>
         </div>
         <div class="visual stack" style="justify-content:center">
           <div class="tdy" id="tdy">
@@ -681,17 +679,38 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
             <div class="tcore" id="td-core" style="left:50%;top:46%"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-m="1" alt=""><b>One</b></div>
             <div class="tdir" id="td-in" style="left:50%;top:27%" aria-hidden="true"><span>In ↓</span><span>↑ Out</span></div>
           </div>
-          <div class="tfoot">
-            <div class="tswap tcap">
-              <span class="fx" id="td-ca">Separate product conversations.</span>
-              <span class="fx" id="td-cb">Existing agents keep working behind One.</span>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="s-tomorrow" aria-label="Scene 3 of 11: Tomorrow">
+      <div class="wrap split">
+        <div class="copy">
+          <h2 class="fx" id="tm-h">Tomorrow: one entry point, one output point, one conversation.</h2>
+          <p class="fx" id="tm-p">Existing agents keep working behind One.</p>
+        </div>
+        <div class="visual stack" style="justify-content:center">
+          <div class="tdy" id="tm-diagram">
+            <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <line class="on main" x1="50" y1="8" x2="50" y2="46" vector-effect="non-scaling-stroke"/>
+              <line class="on" x1="50" y1="46" x2="13" y2="84" vector-effect="non-scaling-stroke"/>
+              <line class="on" x1="50" y1="46" x2="37.7" y2="84" vector-effect="non-scaling-stroke"/>
+              <line class="on" x1="50" y1="46" x2="62.3" y2="84" vector-effect="non-scaling-stroke"/>
+              <line class="on" x1="50" y1="46" x2="87" y2="84" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="tyou on" style="left:50%;top:8%"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 20c1.2-4.2 4.3-6 8-6s6.8 1.8 8 6" fill="currentColor"/></svg><b>You</b></div>
+            <div class="tcore on" style="left:50%;top:46%"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><b>One</b></div>
+            <div class="tdir on" style="left:50%;top:27%" aria-hidden="true"><span>In ↓</span><span>↑ Out</span></div>
+            <div class="tagent on" style="left:13%;top:84%"><b>AgExpert<br>Field</b><em>Agent</em></div>
+            <div class="tagent on" style="left:37.7%;top:84%"><b>AgExpert<br>Accounting</b><em>Agent</em></div>
+            <div class="tagent on" style="left:62.3%;top:84%"><b>My Farm<br>Connect</b><em>Agent</em></div>
+            <div class="tagent on" style="left:87%;top:84%"><b>Benchmarker</b><em>Agent</em></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="scene" id="s-send" aria-label="Scene 3 of 10: Any farm document">
+    <section class="scene" id="s-send" aria-label="Scene 4 of 11: Any farm document">
       <div class="wrap split">
         <div class="copy"><h2 class="fx" id="se-h">Any farm document at any time.</h2><p class="fx" id="se-p">Snap it. Send it. One records it where it belongs.</p></div>
         <div class="visual">
@@ -720,7 +739,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-intel" aria-label="Scene 4 of 10: Decision Intelligence">
+    <section class="scene" id="s-intel" aria-label="Scene 5 of 11: Decision Intelligence">
       <div class="wrap split r125">
         <div class="copy">
           <h2 class="fx" id="in-h">Reconciled against the AgExpert model.</h2>
@@ -740,7 +759,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-eco" aria-label="Scene 5 of 10: Connected">
+    <section class="scene" id="s-eco" aria-label="Scene 6 of 11: Connected">
       <div class="wrap split">
         <div class="copy">
           <h2 class="fx" id="ec-h">Your apps stay in place.</h2>
@@ -756,7 +775,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-decide" aria-label="Scene 6 of 10: You decide">
+    <section class="scene" id="s-decide" aria-label="Scene 7 of 11: You decide">
       <div class="wrap split r145">
         <div class="copy">
           <h2 class="fx" id="de-h">It proposes. You decide.</h2>
@@ -810,7 +829,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-bank" aria-label="Scene 7 of 10: Routines">
+    <section class="scene" id="s-bank" aria-label="Scene 8 of 11: Routines">
       <div class="wrap split r125">
         <div class="copy">
           <h2 class="fx" id="bk-h">Routine work. Human in the loop.</h2>
@@ -848,7 +867,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-jd" aria-label="Scene 8 of 10: Every two weeks">
+    <section class="scene" id="s-jd" aria-label="Scene 9 of 11: Every two weeks">
       <div class="wrap split">
         <div class="copy"><h2 class="fx" id="jd-h">Ask once.<br>It remembers.</h2><p class="fx" id="jd-p">One brings in your John Deere data on schedule — and checks anything unclear.</p></div>
         <div class="visual">
@@ -874,7 +893,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-start" aria-label="Scene 9 of 10: Get started">
+    <section class="scene" id="s-start" aria-label="Scene 10 of 11: Get started">
       <div class="wrap split">
         <div class="copy"><h2 class="fx" id="st-h">A dead-simple new user experience.</h2><p class="fx" id="st-p">Bring the records you already keep.<br>Up and running in minutes.</p></div>
         <div class="visual">
@@ -903,7 +922,7 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
       </div>
     </section>
 
-    <section class="scene" id="s-close" aria-label="Scene 10 of 10: Close">
+    <section class="scene" id="s-close" aria-label="Scene 11 of 11: Close">
       <div class="open-wrap">
         <div class="orbit" id="c-orbit" style="opacity:.6"><div class="ring2"></div></div>
         <div class="title">
@@ -948,7 +967,8 @@ function money(n){var a=Math.abs(Math.round(n)).toString().replace(/\B(?=(\d{3})
 /* ---------- Scenes ---------- */
 var SC=[
   {id:"open",   hash:"open",       name:"Open",            dur:10500, built:9500},
-  {id:"today",  hash:"today",      name:"Where we are now", dur:15000, built:14000},
+  {id:"today",  hash:"today",      name:"Today",           dur:7000, built:7000},
+  {id:"tomorrow", hash:"tomorrow", name:"Tomorrow",        dur:7000, built:6000},
   {id:"send",   hash:"send",       name:"Any farm document", dur:12500, built:11500},
   {id:"intel",  hash:"intelligence", name:"Decision Intelligence", dur:8300, built:7600},
   {id:"eco",    hash:"connected",  name:"Connected",       dur:16500, built:15600},
@@ -1137,23 +1157,24 @@ function rIntel(t){
 function tdPos(el,a,b,q){if(q===null){el.style.opacity=0;return;}var e=ease(q);el.style.left=(a.x+(b.x-a.x)*e)+"%";el.style.top=(a.y+(b.y-a.y)*e)+"%";el.style.opacity=Math.min(1,Math.min(q,1-q)*8).toFixed(3);}
 function seg(q,a,b){return q>a&&q<b?(q-a)/(b-a):null;}
 function rToday(t){
-  var vis=tdy.parentNode,ft=vis.querySelector(".tfoot");
-  var w=vis.clientWidth||600,h=(vis.clientHeight||560)-(ft?ft.offsetHeight:0)-14,W=Math.max(260,Math.min(w,640)),H=Math.max(250,Math.min(h,W*.9));
+  var vis=tdy.parentNode;
+  var w=vis.clientWidth||600,h=vis.clientHeight||560,W=Math.max(260,Math.min(w,640)),H=Math.max(250,Math.min(h,W*.9));
   tdy.style.width=W+"px";tdy.style.height=H+"px";
-  var one=reduced||t>=TD.B;   // reduced motion: show the AgExpert One state only
-  on("td-ha",!one&&t>=100);on("td-hb",one);
-  on("td-ca",!one&&t>=TD.A0);on("td-cb",one&&(reduced||t>=TD.B+1000));
+  on("td-ha",true);on("td-ca",t>=TD.A0);
   on("td-you",reduced||t>=500);
   tdAg.forEach(function(a,i){on(a,reduced||t>=800+i*150);});
-  tdD.forEach(function(l,i){cls(l,"on",!one&&t>=1400+i*100);});
-  var bOn=one&&(reduced||t>=TD.B+700);
-  on("td-core",one&&(reduced||t>=TD.B+300));cls($("tdu"),"on",bOn);tdF.forEach(function(l){cls(l,"on",bOn);});on("td-in",one&&(reduced||t>=TD.B+1000));
-  var Y=TD.you,C=TD.core,live=!reduced;
-  TD_AG.forEach(function(a,i){var g={x:a.x,y:TD.agY},s=TD.A0+i*TD.AS,k=Math.floor((t-s)/TD.AP),q=(t-s)/TD.AP-k,run=live&&!one&&t>=s&&k<2;
+  tdD.forEach(function(l,i){cls(l,"on",t>=1400+i*100);});
+  on("td-core",false);cls($("tdu"),"on",false);tdF.forEach(function(l){cls(l,"on",false);});on("td-in",false);
+  var Y=TD.you,live=!reduced;
+  TD_AG.forEach(function(a,i){var g={x:a.x,y:TD.agY},s=TD.A0+i*TD.AS,k=Math.floor((t-s)/TD.AP),q=(t-s)/TD.AP-k,run=live&&t>=s&&k<2;
     tdPos(tdDotA[i].i,Y,g,run?seg(q,0,.45):null);tdPos(tdDotA[i].o,g,Y,run?seg(q,.55,1):null);});
-  var k=Math.floor((t-TD.B0)/TD.BP),q=(t-TD.B0)/TD.BP-k,runB=live&&one&&t>=TD.B0&&k<2;
-  tdPos(tdPill.in,Y,C,runB?seg(q,0,.22):null);tdPos(tdPill.out,C,Y,runB?seg(q,.78,1):null);
-  TD_AG.forEach(function(a,i){var g={x:a.x,y:TD.agY};tdPos(tdDotB[i].i,C,g,runB?seg(q,.25,.47):null);tdPos(tdDotB[i].o,g,C,runB?seg(q,.53,.75):null);});
+  Object.keys(tdPill).forEach(function(k){tdPill[k].style.opacity=0;});
+}
+function rTomorrow(){
+  var diagram=$("tm-diagram"),vis=diagram.parentNode;
+  var w=vis.clientWidth||600,h=vis.clientHeight||560,W=Math.max(260,Math.min(w,640)),H=Math.max(250,Math.min(h,W*.9));
+  diagram.style.width=W+"px";diagram.style.height=H+"px";
+  on("tm-h",true);on("tm-p",true);
 }
 function rEco(t){
   var vis=eco.parentNode,cap=$("ec-cap");
@@ -1262,7 +1283,7 @@ function rClose(t){
   orbit(S("close"),$("c-orbit"),null,0);
   on("c-h1",t>=300);on("c-sub",t>=800);on("c-model",t>=1500);
 }
-var R=[rOpen,rToday,rSend,rIntel,rEco,rDecide,rBank,rJD,rStart,rClose];
+var R=[rOpen,rToday,rTomorrow,rSend,rIntel,rEco,rDecide,rBank,rJD,rStart,rClose];
 
 /* ---------- engine ---------- */
 var dotsNav=$("dots"),dotBtns=SC.map(function(s,i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Scene "+(i+1)+": "+s.name);b.innerHTML="<i><b></b></i>";b.addEventListener("click",function(){go(i);});dotsNav.appendChild(b);return b;});
@@ -1336,7 +1357,7 @@ document.addEventListener("keydown",function(e){
   else if(k==="Home"){e.preventDefault();go(0);}
   else if(k==="End"){e.preventDefault();go(SC.length-1);}
   else if(k>="1"&&k<="9"){go(+k-1);}
-  else if(k==="0"){go(9);}
+  else if(k==="0"){go(SC.length-1);}
 });
 function hashIndex(){var h=location.hash.replace(/^#/,"").toLowerCase(),i=-1;if(!h)return -1;SC.forEach(function(s,k){if(s.hash===h||s.id===h||String(k+1)===h)i=k;});return i;}
 function fromHash(){var i=hashIndex();if(i>=0&&i!==cur){go(i);return true;}return i>=0;}
