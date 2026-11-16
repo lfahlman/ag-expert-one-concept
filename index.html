@@ -454,15 +454,23 @@ body.snap *{transition:none!important}
 .win-body{flex:1;min-height:0;display:flex;flex-direction:column;position:relative;background:#F6F9FA}
 .win .comp{background:#F6F9FA;padding:8px 14px 14px;flex:none}
 .win .cx{padding:14px 18px}
-.equipment-link{display:block;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--elm);color:#fff;text-align:center;text-decoration:none;font-size:14px;font-weight:700}
-.equipment-link:hover{background:#155763}
-.equipment-account{display:block;width:100%;margin-top:8px;padding:10px 12px;border:0;border-radius:10px;background:var(--elm);color:#fff;text-align:center;font-size:14px;font-weight:700;cursor:pointer;transition:background .3s}
-.equipment-account:hover{background:#155763}
-.equipment-account:disabled{cursor:default}
-.equipment-account.linking,.equipment-account.linking:hover{background:var(--blumine)}
-.equipment-account.linked,.equipment-account.linked:hover{background:var(--goblin)}
-.equipment-account.linking:before{content:"";display:inline-block;width:12px;height:12px;margin-right:8px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;vertical-align:-2px;animation:eq-spin .8s linear infinite}
-.equipment-status{margin:8px 0 0;color:var(--goblin);font-size:13px;line-height:1.4}
+.equipment-connect,.equipment-rm{display:block;width:100%;margin-top:8px;padding:10px 12px;border:0;border-radius:10px;background:var(--elm);color:#fff;text-align:center;font-size:14px;font-weight:700;cursor:pointer}
+.equipment-connect:hover,.equipment-rm:hover{background:#155763}
+.equipment-connect:disabled{background:var(--goblin);cursor:default}
+.equipment-rm:disabled{background:var(--goblin);cursor:default}
+.equipment-checks{padding:10px 12px}
+.equipment-check-label{display:block;margin-bottom:7px;color:var(--ink3);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.equipment-check-row{display:flex;align-items:center;gap:8px;padding:4px 0;color:var(--ink3);font-size:13px}
+.equipment-check-row i{width:15px;height:15px;flex:none;border:2px solid #C9D3D8;border-radius:50%;font-style:normal}
+.equipment-check-row.active{color:var(--blumine);font-weight:650}
+.equipment-check-row.active i{border-color:var(--elm);border-top-color:transparent;animation:eq-spin .8s linear infinite}
+.equipment-check-row.done{color:var(--goblin)}
+.equipment-check-row.done i{border-color:var(--goblin);background:var(--goblin);position:relative}
+.equipment-check-row.done i:after{content:"✓";position:absolute;inset:-2px;color:#fff;text-align:center;font-size:11px;font-style:normal}
+.equipment-result{border-left:4px solid var(--sushi)!important}
+.equipment-result>b{display:block;color:#1B512F}
+.equipment-result p{margin:6px 0 0;font-size:13px;line-height:1.4}
+.equipment-ack{margin:8px 0 0;color:var(--goblin);font-size:13px;line-height:1.4}
 @keyframes eq-spin{to{transform:rotate(360deg)}}
 .scenario-cost{padding:12px}
 .scenario-cost>b{display:block;margin-bottom:6px;color:var(--blumine);font-size:14px}
@@ -927,20 +935,32 @@ footer{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12
     <section class="scene" id="s-equipment" aria-label="Scene 10 of 13: Equipment financing">
       <div class="wrap split">
         <div class="copy">
-          <h2 class="fx" id="eq-h">Equipment options, one conversation.</h2>
+          <h2 class="fx" id="eq-h">One-click equipment financing</h2>
+          <p class="fx" id="eq-p">Connect Online Services, then finish the review with a relationship manager.</p>
         </div>
         <div class="visual">
           <div class="web-demo win" id="eq-window">
             <div class="web-bar"><span class="web-lights" aria-hidden="true">● ● ●</span><b>Ask Aggie</b></div>
             <div class="win-body">
               <div class="cx" id="eq-chat">
-                <div class="bm me" id="eq-ask">What equipment loan options might work for my farm?</div>
-                <div class="bm one" id="eq-reply">I can help you explore FCC equipment financing. Here’s the equipment financing page.</div>
+                <div class="bm me" id="eq-ask">I need to upgrade my combine</div>
+                <div class="bm one" id="eq-reply">I can help you get started. Let’s connect your FCC Online Services account.</div>
+                <div class="bm one" id="eq-ag-expert">I’ve got your AgExpert profile ready. Connect Online Services to continue with your equipment request.</div>
                 <div class="bm one card" id="eq-link">
-                  <b>Equipment Financing | FCC</b>
-                  <button type="button" class="equipment-account" id="eq-account-link">Link FCC Online Services</button>
-                  <p class="equipment-status" id="eq-account-status" role="status" aria-live="polite" hidden></p>
-                  <a class="equipment-link" href="https://www.fcc-fac.ca/en/financing/agriculture/finance-equipment" target="_blank" rel="noopener noreferrer">Open FCC equipment financing</a>
+                  <b>Connect FCC Online Services</b>
+                  <button type="button" class="equipment-connect" id="eq-connect">Connect Online Services</button>
+                </div>
+                <div class="bm one card equipment-checks" id="eq-checks" role="status" aria-live="polite">
+                  <span class="equipment-check-label">Illustrative demo</span>
+                  <div class="equipment-check-row" id="eq-check-ag"><i></i>Checking with AgExpert</div>
+                  <div class="equipment-check-row" id="eq-check-online"><i></i>Checking with online services</div>
+                  <div class="equipment-check-row" id="eq-check-credit"><i></i>Doing a credit check</div>
+                </div>
+                <div class="bm one" id="eq-connected">Thanks — I’m ready to help with the next step for your equipment purchase.</div>
+                <div class="bm one card equipment-result" id="eq-result">
+                  <b>I’ve prepared your equipment financing request. You’re ready to connect with a relationship manager for final review.</b>
+                  <button type="button" class="equipment-rm" id="eq-rm">Connect with RM</button>
+                  <p class="equipment-ack" id="eq-rm-ack" role="status" aria-live="polite" hidden></p>
                 </div>
               </div>
             </div>
@@ -1096,6 +1116,7 @@ function reset(i){
   if(id==="decide")ST.decide={choice:null,cat:null,edit:false,pl:null,closed:false};
   if(id==="jd")ST.jd={rate:null};
   if(id==="intel")ST.intel={prod:null,fuel:null};
+  if(id==="equipment")ST.equipment={connected:false,ready:false,checkStep:-1};
 }
 SC.forEach(function(s,i){reset(i);});
 function waiting(i){var id=SC[i].id;return id==="decide"?ST.decide.choice===null:id==="jd"?ST.jd.rate===null:false;}
@@ -1380,8 +1401,15 @@ function rJD(t){
 function rEquipment(t){
   var z=reduced?1e9:t;
   on("eq-h",t>=100);
-  on("eq-ask",z>=500);on("eq-reply",z>=1800);
-  on("eq-link",z>=3500);
+  on("eq-p",t>=300);
+  on("eq-ask",z>=500);on("eq-reply",z>=1300);on("eq-ag-expert",z>=2100);on("eq-link",z>=3000);
+  on("eq-checks",ST.equipment.connected);
+  ["eq-check-ag","eq-check-online","eq-check-credit"].forEach(function(id,i){
+    var row=$(id),done=ST.equipment.checkStep>i;
+    row.classList.toggle("active",ST.equipment.connected&&ST.equipment.checkStep===i);
+    row.classList.toggle("done",done);
+  });
+  on("eq-connected",ST.equipment.connected);on("eq-result",ST.equipment.ready);
 }
 function rScenarios(t){
   var z=reduced?1e9:t;
@@ -1465,16 +1493,26 @@ document.querySelectorAll("[data-fuel]").forEach(function(b){b.addEventListener(
   $("live").textContent=ST.intel.fuel==="ok"?"You confirmed the unusual fuel value is correct.":"Fuel receipt left for review.";});});
 $("b-prev").addEventListener("click",prev);$("b-next").addEventListener("click",next);$("b-replay").addEventListener("click",replay);
 $("b-play").addEventListener("click",function(){if(atEnd())setPlaying(true);else setPlaying(!playing);});
-$("eq-account-link").addEventListener("click",function(){
-  var button=$("eq-account-link"),status=$("eq-account-status");
+$("eq-connect").addEventListener("click",function(){
+  var button=$("eq-connect"),state=ST.equipment;
   if(button.disabled)return;
-  button.disabled=true;button.classList.add("linking");button.textContent="Connecting to FCC Online Services…";
-  txt(status,"Connecting to FCC Online Services…");status.hidden=false;
-  window.setTimeout(function(){
-    button.classList.remove("linking");button.classList.add("linked");
-    button.textContent="FCC Online Services linked";
-    txt(status,"FCC Online Services linked.");
-  },1800);
+  button.disabled=true;button.textContent="Continue";
+  state.connected=true;state.checkStep=0;render();
+  function advance(){
+    if(ST.equipment!==state)return;
+    if(state.checkStep<2){
+      state.checkStep++;render();window.setTimeout(advance,850);return;
+    }
+    state.checkStep=3;state.ready=true;render();
+  }
+  window.setTimeout(advance,850);
+});
+$("eq-rm").addEventListener("click",function(){
+  var ack=$("eq-rm-ack"),button=$("eq-rm");
+  if(button.disabled)return;
+  button.disabled=true;button.textContent="RM connection requested";
+  txt(ack,"A relationship manager would be connected in a live service.");
+  ack.hidden=false;
 });
 document.addEventListener("keydown",function(e){
   if(e.metaKey||e.ctrlKey||e.altKey)return;
